@@ -129,7 +129,7 @@ set listchars=tab:»\ ,trail:·,nbsp:␣
 set cursorline
 
 " Minimal number of screen lines to keep above and below the cursor
-set scrolloff=10
+set scrolloff=10 sidescrolloff=5
 
 
 " [[ Basic Keymaps ]]
@@ -165,6 +165,18 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
+
+" Shift+HJKL to quickly move cursor
+nnoremap K 7<up>
+nnoremap J 7<down>
+nnoremap H 0
+nnoremap L $
+
+" ; to enter command mode
+nnoremap ; :
+
+" x to delete current character without saving it to register
+nnoremap x "_x
 
 
 " [[ Install `vim-plug` plugin manager ]]
@@ -227,6 +239,9 @@ Plug '907th/vim-auto-save'
 " Highlight on yank
 Plug 'machakann/vim-highlightedyank'
 
+" Change root directory to project root
+Plug 'airblade/vim-rooter'
+
 " [[ Configure plugins ]]
 " Set colorscheme
 set termguicolors
@@ -235,12 +250,6 @@ set termguicolors
 let g:auto_save = 1
 
 " Set cursor to a line in insert mode and block in other modes
-" let &t_SI = "\e[6 q"
-" let &t_SR = "\e[6 q"
-" let &t_EI = "\e[2 q"
-" let &t_ti .= "\e[1 q"
-" let &t_te .= "\e[0 q"
-
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"

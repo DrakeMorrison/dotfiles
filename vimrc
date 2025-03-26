@@ -166,9 +166,7 @@ nnoremap <C-l> <C-w><C-l>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 
-" Shift+HJKL to quickly move cursor
-nnoremap K 7<up>
-nnoremap J 7<down>
+" Shift+HL to quickly move cursor
 nnoremap H 0
 nnoremap L $
 
